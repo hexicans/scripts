@@ -34,3 +34,6 @@ cp ${OLD_FOLDER}/index.html ${NEW_FOLDER}/index.html
 # Will basically mimic old behavior, without the messy structure.
 # !!! Before you do this, make sure the old subdomain folder deletion is turned ON !!!
 #ln -s ${NEW_FOLDER} ${OLD_FOLDER}
+
+# DirectAdmin wishes to receive this.
+exit 0;
