@@ -10,6 +10,8 @@
 #
 # Generally changing to DOCROOT and REALDOCROOT to e.g. `HOME`/domains/`SUB`.`DOMAIN`/public_html| 
 # and omitting |SUB| from all paths will do.
+#
+# FYI: Variables $username, $domain and $subdomain are given directly by DirectAdmin to the script.
 ##
 
 OLD_FOLDER=/home/$username/domains/$domain/public_html/$subdomain
