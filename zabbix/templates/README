@@ -1,0 +1,7 @@
+Teamspeak3 zabbix template is still fresh.
+
+Currently it only has a serverquery check to determine if the service is up.
+
+This is because Zabbix does not natively support UDP checks.
+
+Later on I will see what else I can implement.

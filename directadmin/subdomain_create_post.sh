@@ -21,12 +21,12 @@ NEW_FOLDER=/home/$username/domains/$subdomain.$domain/public_html
 #OLD_FOLDER_SSL=/home/$username/domains/$domain/private_html/$subdomain
 #NEW_FOLDER_SSL=/home/$username/domains/$subdomain.$domain/private_html
 
-#mkdir -p -m 0755 ${NEW_FOLDER_SSL}
-#chown $username:$username ${NEW_FOLDER_SSL}
+#mkdir -p -m 0751 ${NEW_FOLDER_SSL}
+#chown ${username}:${username} ${NEW_FOLDER_SSL}
 #cp ${OLD_FOLDER_SSL}/index.html ${NEW_FOLDER_SSL}/index.html
 
-mkdir -p -m 0755 ${NEW_FOLDER}
-chown $username:$username ${NEW_FOLDER}
+mkdir -p -m 0751 ${NEW_FOLDER}
+chown ${username}:${username} ${NEW_FOLDER}
 cp ${OLD_FOLDER}/index.html ${NEW_FOLDER}/index.html
 
 # Delete old subdomain folder with all of its contents, off by default.
