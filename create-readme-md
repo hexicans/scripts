@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Allows you to easily update your README.md file and add any new files that are in the folder.
+
+for i in `ls -l | grep ^- | grep -v README.md | awk '{print $9}'`;
+do
+    SANITIZED=`echo $i | sed 's|_|\\\_|g'`
+    GREPSTRING=`echo $i | sed 's|_|\\\\\\\\\_|g'`
+    if [ -e README.md ]; then
+        if ( ! grep -q $GREPSTRING README.md ); then
+            echo Adding file $i to README.md
+            echo -e "$SANITIZED\n=====\n" >> README.md;
+        else
+            echo File $i already in README.md
+        fi
+    else
+        echo Adding file $i to README.md
+        echo -e "$SANITIZED\n=====\n" >> README.md;
+    fi
+done
