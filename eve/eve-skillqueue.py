@@ -18,8 +18,9 @@ class getCharInfo:
     def getSkillQueue(self, charid):
         api = evelink.api.API(api_key=(self.apik, self.apic))
         char = evelink.char.Char(charid, api=api)
+        queue = char.skill_queue().result[-1]["end_ts"] + 3600 # adding an hour for GMT+1
         try:
-            print "Character '%s' has a skill queue until:" % self.cn, time.strftime("%A %D %H:%M:%S", time.gmtime(char.skill_queue().result[-1]["end_ts"] + 3600))
+            print "Character '%s' has a skill queue until:" % self.cn, time.strftime("%A %D %H:%M:%S", time.gmtime(queue))
         except:
             print "Character '%s' has an empty skill queue!" % self.cn
 
