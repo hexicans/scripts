@@ -18,9 +18,10 @@ class getCharInfo:
         weeks, days = divmod(tdiff.days, 7)
         minutes, seconds = divmod(tdiff.seconds, 60)
         hours, minutes = divmod(minutes, 60)
+        remweeks = "{0} weeks ".format(weeks) if weeks>0 else ""
         remdays = "{0} days ".format(days) if days>0 else ""
         remhours = "{0} hours ".format(hours) if hours>0 else ""
-        remainder = "%s%s%s minutes" % (remdays, remhours, minutes)
+        remainder = "%s%s%s%s minutes" % (remweeks, remdays, remhours, minutes)
         return remainder
 
     def getCharID(self):
